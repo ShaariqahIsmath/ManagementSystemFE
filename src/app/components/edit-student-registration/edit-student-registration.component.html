@@ -1,0 +1,64 @@
+<!-- edit-student-registration.component.html -->
+
+<div class="form-container">
+    <div class="form-header">
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()" style="position: absolute; top: 10px; right: 10px;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        Edit Student Registration
+    </div>
+    
+    <form (ngSubmit)="saveRegistration()" [formGroup]="registrationForm">
+        <!-- Registration ID (read-only) -->
+        <div class="form-group">
+            <label for="registrationId">Registration ID</label>
+            <input type="text" class="form-control" id="registrationId" formControlName="registrationId" readonly>
+        </div>
+
+        <!-- Registration Date -->
+        <div class="form-group">
+            <label for="registrationDate">Registration Date</label>
+            <input type="date" class="form-control" id="registrationDate" formControlName="registrationDate" required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="registrationMethod">Registration Method</label>
+            <select class="form-control" id="registrationMethod" formControlName="registrationMethod" required>
+                <option *ngFor="let method of registrationMethods" [value]="method">{{ method }}</option>
+            </select>
+        </div>
+        
+        <!-- Registration Source Dropdown -->
+        <div class="form-group">
+            <label for="registrationSource">Registration Source</label>
+            <select class="form-control" id="registrationSource" formControlName="registrationSource" required>
+                <option *ngFor="let source of registrationSources" [value]="source">{{ source }}</option>
+            </select>
+        </div>
+        
+        <!-- Course Name Dropdown -->
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <select class="form-control" id="courseName" formControlName="courseId" required>
+                <option *ngFor="let course of courses" [value]="course.id" [selected]="registration.course && course.id === registration.course.id">{{ course.name }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="courseType">Course Type</label>
+            <input type="text" class="form-control" id="courseType" formControlName="courseType" readonly>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+                    <!-- Success Message -->
+                    <div *ngIf="isSuccess" class="alert alert-success">
+                        {{ successMessage }}
+                    </div>
+        
+                    <!-- Error Message -->
+                    <div *ngIf="errorMessage" class="alert alert-danger">
+                        {{ errorMessage }}
+                    </div>
+    </form>
+</div>

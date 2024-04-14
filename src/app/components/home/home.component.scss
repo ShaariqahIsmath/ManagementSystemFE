@@ -1,0 +1,59 @@
+.container-fluid {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .row .col-md-4 {
+      text-align: center;
+    }
+  
+    a.btn-custom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      background-color: #5072A7;
+      padding: 25px;
+      border: none;
+      border-radius: 15px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  
+      i {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+      }
+  
+      p {
+        font-size: 1.2em;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+    }
+  
+    .col-md-4:hover a.btn-custom,
+    .col-md-4:hover a.btn-custom i,
+    .col-md-4:hover a.btn-custom p {
+      background-color: black;
+      color: #5072A7;
+  
+      i {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .btn-equal {
+    height: 200px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

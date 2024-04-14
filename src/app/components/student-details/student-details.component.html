@@ -1,0 +1,95 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Student Details</h2>
+
+  <div class="card">
+      <div class="card-body">
+          <div class="button-container mb-4 d-flex align-items-center justify-content-between">
+              <h5 class="card-title mb-0">
+                  <span>{{ student?.firstName }} {{ student?.lastName }}</span>
+              </h5>
+              <div class="button-group">
+                  <button class="btn btn-danger" (click)="deleteStudent(student.id)">
+                      <i class="fa fa-trash"></i> Delete
+                  </button>
+                  <button class="btn btn-secondary" (click)="navigateBack()"><i class="fa fa-long-arrow-left"></i>
+                      Go Back 
+                  </button>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-md-6">
+                  <h6 class="text-info">
+                      Personal Information
+                      <button class="btn btn-primary ml-2" (click)="onEditStudentClick(student.id)">
+                          <i class="fa fa-pencil"></i> Edit
+                      </button>
+                  </h6>
+                  <p><strong>Date of Birth: </strong>{{ student?.dateOfBirth }}</p>
+                  <p><strong>Email: </strong>{{ student?.email }}</p>
+                  <p><strong>Phone: </strong>{{ student?.phone }}</p>
+                  <p><strong>Emergency Contact: </strong>{{ student?.emergencyContact }}</p>
+                  <p><strong>Address: </strong>{{ student?.address }}</p>
+              </div>
+              <div class="col-md-6">
+                  <h6 class="text-info">
+                      Academic Details
+                      <button class="btn btn-primary ml-2" (click)="onEditRegistrationClick(student.id)">
+                          <i class="fa fa-pencil"></i> Edit
+                      </button>
+                  </h6>
+                  <p><strong>Department: </strong>{{ departmentName }}</p>
+                  <p><strong>Department In-Charge: </strong>{{ student?.department?.inCharge }}</p>
+                  <p><strong>Course: </strong>{{ student?.course?.name }}</p>
+                  <p><strong>Course Type: </strong>{{ courseType }}</p>
+                  <p><strong>Registration ID: </strong>{{ student?.registration?.id }}</p>
+                  <p><strong>Registration Date: </strong>{{ student?.registration?.registrationDate | date:'medium' }}</p>
+                  <p><strong>Registration Method: </strong>{{ student?.registration?.registrationMethod }}</p>
+                  <p><strong>Registration Source: </strong>{{ student?.registration?.registrationSource }}</p>
+                  <div class="row mt-4">
+                      <div class="col-md-12">
+                          <h6 class="text-info">Modules and Assessments</h6>
+                          <table class="table table-bordered">
+                              <thead>
+                                  <tr>
+                                      <th>Module Code</th>
+                                      <th>Module Name</th>
+                                      <th>Assessment Name</th>
+                                      <th>Marks</th>
+                                      <th>Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <ng-container *ngFor="let module of student?.module; let i = index">
+                                    <ng-container *ngFor="let assessment of module.assessments; let j = index">
+                                        <!-- Row for the first assessment in each module -->
+                                        <tr *ngIf="j === 0">
+                                            <td [attr.rowspan]="module.assessments.length">{{ module.code }}</td>
+                                            <td [attr.rowspan]="module.assessments.length">{{ module.name }}</td>
+                                            <td>{{ assessment.name }}</td>
+                                            <td>{{ assessment.assessmentDetailsList[0]?.marks }}</td>
+                                            <td>
+                                                <button class="btn btn-primary" (click)="onEditAssessmentClick(student.id, assessment.id)">Edit</button>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!-- Rows for the subsequent assessments in each module -->
+                                        <tr *ngIf="j !== 0">
+                                            <td>{{ assessment.name }}</td>
+                                            <td>{{ assessment.assessmentDetailsList[0]?.marks }}</td>
+                                            <td>
+                                                <button class="btn btn-primary" (click)="onEditAssessmentClick(student.id, assessment.id)">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </ng-container>
+                                </ng-container>
+                                
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

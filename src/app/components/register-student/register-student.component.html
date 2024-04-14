@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Student Registration</h2>
+
+    <!-- Success Message -->
+    <div *ngIf="isSuccess" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+<!-- Course Dropdown -->
+<div class="mb-3">
+  <label for="courseSelect" class="form-label">Course</label>
+  <select id="courseSelect" class="form-select" formControlName="course">
+    <option *ngFor="let course of courses" [value]="course.id">{{ course.name }}</option>
+  </select>
+</div>
+
+<!-- Department Dropdown -->
+<div class="mb-3">
+  <label for="departmentSelect" class="form-label">Department</label>
+  <select id="departmentSelect" class="form-select" formControlName="department">
+    <option *ngFor="let department of departments" [value]="department.id">{{ transformEnumToString(department.name) }}</option>
+  </select>
+</div>
+
+
+    <!-- Registration Date Input -->
+    <div class="mb-3">
+      <label for="registrationDate" class="form-label">Registration Date</label>
+      <input type="date" class="form-control" id="registrationDate" formControlName="registrationDate">
+    </div>
+
+
+
+    <!-- Registration Method Radio Buttons -->
+    <div class="mb-3">
+      <label class="form-label">Registration Method</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="inPerson" value="In-person"
+          formControlName="registrationMethod">
+        <label class="form-check-label" for="inPerson">In-person</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="onLine" value="On-line" formControlName="registrationMethod">
+        <label class="form-check-label" for="onLine">On-line</label>
+      </div>
+    </div>
+
+    <!-- Registration Source Radio Buttons -->
+    <div class="mb-3">
+      <label class="form-label">Registration Source</label>
+      <div *ngFor="let source of registrationSources" class="form-check">
+        <input class="form-check-input" type="radio" [id]="source" [value]="source"
+          formControlName="registrationSource">
+        <label class="form-check-label" [for]="source">{{ source }}</label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+
+  </form>
+</div>

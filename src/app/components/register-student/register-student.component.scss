@@ -1,0 +1,90 @@
+body {
+    background-image: url('/assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container {
+    margin-top: 5rem;
+    max-width: 600px; // Setting max width for the container
+    width: 100%; // Make sure the container takes full width within its parent
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+  
+    h2 {
+      margin-bottom: 2rem;
+    }
+  
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+  
+      .mb-3 {
+        margin-bottom: 1.5rem;
+      }
+  
+      .form-label {
+        font-weight: bold;
+      }
+  
+      .form-check {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+  
+        &-input {
+          margin-right: 0.5rem;
+        }
+      }
+  
+      .btn-primary {
+        margin-top: 1rem;
+      }
+  
+      select.form-select {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+      }
+  
+      input.form-check-input,
+      input.form-select {
+        width: auto;
+      }
+  
+      .form-check-label {
+        padding-left: 1rem;
+      }
+  
+      .form-select[multiple],
+      .form-select[size]:not([size="1"]) {
+        height: auto;
+      }
+  
+      button[type="submit"] {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken(#007bff, 10%);
+        }
+      }
+    }
+  }
+  

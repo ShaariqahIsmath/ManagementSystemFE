@@ -1,0 +1,52 @@
+<!-- Modal -->
+<div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <button type="button" class="close-btn" (click)="bsModalRef.hide()">&times;</button>
+        <h4 class="modal-title">Edit Student Profile</h4>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" formControlName="firstName">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" formControlName="lastName">
+            </div>
+            <div class="mb-3">
+                <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                <input type="date" id="dateOfBirth" formControlName="dateOfBirth">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" formControlName="phone">
+            </div>
+            <div class="mb-3">
+                <label for="emergencyContact" class="form-label">Emergency Contact</label>
+                <input type="tel" id="emergencyContact" formControlName="emergencyContact">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" id="address" formControlName="address">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+            <!-- Success Message -->
+            <div *ngIf="isSuccess" class="alert alert-success">
+                {{ successMessage }}
+            </div>
+
+            <!-- Error Message -->
+            <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+            </div>
+        </form>
+    </div>
+</div>

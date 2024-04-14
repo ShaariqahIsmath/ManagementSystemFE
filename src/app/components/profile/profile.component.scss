@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture .fa-user {
+    font-size: 5em;
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.user-details {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-details-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.user-details-row strong {
+    width: 120px;
+    font-weight: bold;
+    flex-shrink: 0;  // Prevent the strong element from shrinking
+
+}
+
+.user-details-row span {
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    word-break: break-all;
+
+}
+
+.user-details-row strong:nth-of-type(3) {  // Target the third strong element
+    width: auto;  // Allow the width to be flexible based on content
+    display: inline-block;  // Ensure it's inline-block to respect the width
+    margin-left: 10px;  // Add a margin to create space between the label and value
+}
+
+
+.profile-picture .fa-user,
+.profile-picture .fa-user-plus {
+    font-size: 2em;  /* Adjust the font-size as needed */
+}

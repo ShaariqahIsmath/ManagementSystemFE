@@ -1,0 +1,105 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+.content {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: url('/assets/cap.jpeg') center no-repeat;
+    background-size: cover;
+}
+
+hgroup {
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border: 5px solid #fff;
+    padding: .5em 3em;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+#slogan {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #080402;
+    font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #333 center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar {
+    height: 70px;
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    z-index: 2;
+    width: 100%;
+
+    &.fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        .navbar-brand {
+            font-weight: bold;
+
+            .nav-item {
+                margin-right: 20px;  // Adjusted margin for spacing between nav items
+
+                .nav-link {
+                    color: white;
+                    font-weight: 200;
+                    padding: 10px 15px;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #007bff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-left: 20px;  // Adjusted left margin to start from the beginning
+    display: flex;
+    align-items: center;  // Center the items vertically
+    list-style-type: none;  // Remove default list styles
+    padding: 0;  // Remove default padding
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 25px;  // Space between each nav item
+}

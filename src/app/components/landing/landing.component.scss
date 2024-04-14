@@ -1,0 +1,28 @@
+/* Center content vertically */
+.row {
+  height: 100vh;
+}
+
+/* Background color and padding */
+.container-fluid {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.italicized-text {
+  font-style: italic;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc; /* Add a 2px solid border with a light gray color */
+  border-radius: 8px; /* Optional: Rounded corners for the image */
+  padding: 10px; /* Optional: Padding around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}

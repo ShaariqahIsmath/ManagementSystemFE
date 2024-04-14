@@ -1,0 +1,42 @@
+.container {
+    max-width: 600px; // Setting max width for the container
+    width: 100%; // Make sure the container takes full width within its parent
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+  
+    h2 {
+      margin-bottom: 20px;
+      text-align: center; // Center align the heading
+    }
+  
+    form {
+      max-width: 500px; // Adjusted max-width of the form
+      margin: 0 auto;
+      background-color: #f7f7f7;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  
+      .form-label {
+        font-weight: bold;
+      }
+  
+      .form-control {
+        margin-bottom: 15px; // Spacing between form controls
+      }
+  
+      .btn-primary {
+        margin-top: 20px;
+        width: 100%; // Make the button full width inside the form
+      }
+    }
+  
+    .mt-3 {
+      margin-top: 20px;
+    }
+  }
+  

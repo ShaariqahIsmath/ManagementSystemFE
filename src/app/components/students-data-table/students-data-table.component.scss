@@ -1,0 +1,57 @@
+/* students-data-table.component.scss */
+
+/* Center align text in the table */
+table {
+    width: 100%; 
+    margin: 50px auto; 
+    border-collapse: collapse; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  /* Styling for table headers */
+  th {
+    background-color: #f2f2f2; /* Light gray background */
+    color: #333; /* Dark text color */
+    padding: 12px 15px; /* Padding around the text */
+    text-align: center; /* Center align the text */
+    font-size: 16px; /* Font size for headers */
+    font-weight: bold; /* Bold font weight */
+  }
+  
+  /* Styling for table rows */
+  td {
+    border: 1px solid #ddd; /* Add borders to table cells */
+    padding: 6px 15px 4px; /* Padding around the text */
+    text-align: center; /* Center align the text */
+    font-size: 12px; /* Reduce font size */
+  }
+  
+ /* Increase specificity for date of birth column */
+table.table-bordered.table-striped.table-hover tr td.dateOfBirth,
+table.table-bordered.table-striped.table-hover tr th.dateOfBirth {
+  white-space: nowrap; /* Prevent text wrapping */
+  min-width: 130px; /* Set minimum width for the column */
+}
+
+/* Increase specificity for address column */
+table.table-bordered.table-striped.table-hover tr td.address {
+  min-width: 220px; /* Set minimum width for the column */
+}
+
+/* Increase specificity for "Student Not Registered" text */
+table.table-bordered.table-striped.table-hover tr td.notRegistered {
+  font-style: oblique; /* Make the text italic */
+}
+
+/* Increase specificity for department name */
+table.table-bordered.table-striped.table-hover tr td.department {
+  text-transform: capitalize; /* Convert text to title case */
+}
+
+  
+  /* Styling for clickable rows */
+  tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
